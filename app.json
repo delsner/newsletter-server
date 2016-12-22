@@ -1,0 +1,7 @@
+{
+  "name": "Newsletter-server",
+  "description": "Simple backend server for newsletter app.",
+  "repository": "https://github.com/delsner/newsletter-server",
+  "keywords": ["node", "express", "angular", "MEAN", "mongodb", "REST", "API"],
+  "addons": [""]
+}
