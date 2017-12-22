@@ -16,7 +16,8 @@ function emailRoutes(passport) {
         .get(emailController.getEmails);
 
     router.route('/email/:emailId')
-        .get(emailController.getEmail);
+        .get(emailController.getEmail)
+        .delete(emailController.deleteEmail);
 
     return router;
 }
