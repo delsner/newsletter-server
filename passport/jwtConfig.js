@@ -4,7 +4,7 @@ var User = require('../models/user/userSchema');
 var Config = require('../config/config');
 
 var opts = {};
-opts.jwtFromRequest = ExtractJwt.fromAuthHeader();
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
 opts.secretOrKey = Config.auth.jwtSecret;
 
 function verifyJwt(jwtPayload, done) {

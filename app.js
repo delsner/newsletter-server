@@ -1,11 +1,14 @@
 var Config = require('./config/config.js');
 var mongoose = require('mongoose');
 
-mongoose.connect([Config.db.host, '/', Config.db.name].join(''),{
-    user: Config.db.user,
-    pass: Config.db.pass
-});
-
+if (Config.db.connectionString) {
+    mongoose.connect(Config.db.connectionString);
+} else {
+    mongoose.connect([Config.db.host, '/', Config.db.name].join(''),{
+        user: Config.db.user,
+        pass: Config.db.pass
+    });
+}
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
